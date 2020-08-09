@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrow game</title>
+
+<link rel = 'stylesheet' href='css/style.css'>
+<script type="text/javascript" src='js/custom.js'></script>
+
+</head>
+<body>
+ <div id = "parent">
+  <div id="lives">
+    <img src="img/heart.png" width="100">
+    <span id="live"> </span>
+    <div id="box" class=""></div>
+  </div>
+ 
+  <div id="spinner">
+     <div id = "circle"></div>
+     <div class="cap"></div>
+     <div id="arrows"></div>
+  </div>
+  
+  <div id="moving">
+ 
+  </div>
+ 
+  <div id ="arrow">
+     
+  </div>
+ 
+</div>
+ <div id="refresh" onclick="refresh(event,this)">
+    Tap to refresh
+ </div>
+ 
+ <script type='application/javascript' src='js/class/spinner.js'></script>
+ <script type='application/javascript' src='js/class/arrow.js'></script>
+ <script type='application/javascript' src='js/class/game.js'></script>
+ <script type='application/javascript' src='js/main.js'></script>
+</body>
+</html>

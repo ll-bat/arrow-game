@@ -1,0 +1,188 @@
+ #table {
+    margin:auto;
+    margin-top: 70px;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    box-shadow: 1em 1em 4em lightblue, -1em -1em 4em lightblue;
+    background-color: rgba(0,0,0,.31);
+    border:3px solid grey;
+  }
+  
+  #circle, .circle{
+    margin:auto;
+    border: 10px solid red;
+    border-radius: 50%;
+    box-shadow: 3px 3px 2em lightblue,3px 3px 2em lightblue;
+    
+  }
+  .cap{
+    position:absolute;
+    width:30px;
+    height:13px;
+    background-color: white;
+    margin-left:calc(50% - 10px);
+    top: 0px;
+    
+  }
+  #spinner, .spinner {
+    position:absolute;
+    top:50px;
+    left: calc(50% - 125px);
+    border: none;
+    outline:  0;
+  }
+  
+  @keyframes _fall{
+    from {}
+    to {opacity:0;}
+  }
+  
+  .fall{
+    animation-name: _fall;
+    animation-duration: .71s;
+  }
+  
+  .spinner{
+    transform:rotate(180deg)
+  }
+  
+  .circle{
+    border: none;
+    box-shadow:none;
+  }
+  
+  #arrow {
+    
+  }
+  
+  .arrow, .movearrow{
+    position:absolute;
+    width:10px;
+    height:40px;
+    background-color:blue;
+    left: calc(50% - 5px);
+    bottom:30px;
+  }
+  
+  #arrows > .arrow{
+    transition: all .9s ease-in;
+  }
+  
+  #go {
+    position:absolute;
+    right:100px;
+    bottom:200px;
+    padding: 40px;
+    background-color:lightgrey;
+    color: black;
+    font-size: 2em;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+  
+  @keyframes bluur{
+    0% {opacity: 1}
+    50% {opacity: .3}
+    100% {opacity: 1}
+  }
+  
+  #refresh {
+    animation: bluur 2s infinite;
+    position: absolute;
+    top:100px;
+    left: 25%;
+    font-size:7em;
+    color:grey;
+    text-shadow: 7px 9px 10px lightblue, -7px -9px 10px lightgrey;
+    font-weight: bolder;
+    padding:20px;
+    cursor:pointer;
+    display: none;
+  }
+  #parent {
+    transition: all .4s ease-out;
+  }
+  
+  .canvas {
+    position:relative;
+    margin-top:-80px;
+    margin-left:-40px;
+  }
+  
+  @keyframes ranim{
+    from{}
+    to{ 
+       opacity:0;
+    }
+  }
+  
+  .remove{
+    animation-name: ranim;
+    animation-duration: .5s;
+  }
+  
+  .bomb{
+   box-shadow:5px 5px 10px orange;
+   border-top:none;
+  }
+  #bomb{
+   position:absolute;
+   border-top:5px solid blue;
+   box-shadow: 0 0 0 black, 0 -15px 25px black;
+   height:2px;
+   width:60px;
+   left:calc(50% - 30px);
+   bottom:313px;
+  }
+  #wall{
+   position: absolute;
+   width: 100%;
+   height: 10%;
+   top:20%;
+   background-color: white;
+  }
+  
+  @keyframes mgic{
+   from {}
+   to {transform: rotateX(360deg)}
+  }
+  .magic{
+   animation-name: mgic;
+   animation-duration: 2s;
+  }
+  #lives{
+    position: absolute;
+    right: 100px; 
+  }
+  #live {
+    float: right;
+    font-size: 2.5em;
+    font-family: sans-serif;
+    margin-top:20px;
+    font-weight: bolder;
+  }
+  
+  @keyframes rtate{
+    0% {transform:rotate(-50deg)}
+    50% {transform:rotate(50deg);right:150px;}
+    100% {transform: rotate(-50deg); right:-60px;}
+  }
+  
+  #box{
+    position:absolute;
+    width:20px;
+    height:100px;
+    background-color:white;
+    right:-60px;
+    top:0px;
+  }
+  .shdow{
+    animation-name:rtate;
+    animation-duration:2s;
+  }
+  .head {
+    position:absolute;
+    margin-top:-10px;
+    margin-left:-22px;
+  }
