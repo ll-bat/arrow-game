@@ -6,14 +6,6 @@
   let dist = window.innerHeight - 250 - 60
   
   
-  function tout(fn,t){
-     setTimeout(fn,t) 
-  }
-  
-  function rand(b){
-     return Math.floor(Math.random()*b)
-  }
-  
   function refresh(ev, obj){
      game.refresh(ev,obj)
   }
@@ -22,7 +14,12 @@
      game = new Game()
      game.start()
   }
+  
+  function start(o) {
+	   game.start()
+	   o.remove()
+	   st($('parent'), 'o:1')
+  }
    
 
  let game = new Game()
-   game.start()

@@ -3,18 +3,24 @@
       
 	 constructor(){
 	   this.lives    = 1
+	   this.init()
 	 }
 	 
 	 setup(){  
        dom.onmousedown = (ev)=>{
            num = true
            game.arrow.shoot()
+		   
+		   if (!this.finished){
+		      this.music('throwing',1)
+		   }
        }
        
        dom.onmouseup = (ev) => {
            num = false
        }
-	   this.init()
+	   
+	   this.music('background',1)
 	 }
      
      init(){
@@ -26,7 +32,19 @@
          this.finished = false
          this.isnew    = false
        },500)
+	   	      
      }
+	 
+	 music(id, r){
+		 if (r)
+		   $(id).load()
+	     $(id).play() 
+	 }
+	 
+	 pause(id){
+		 $(id).pause()
+		 
+	 }
      
 	 start() {
 	   this.setup()
@@ -79,6 +97,9 @@
      
      beforeRefresh(){
          let r = $('parent')
+		 
+		 tgclass($('circle'), 'animborder', 500)
+		 
          st(r, "o:.2")
          
          let o = $('arrow')
@@ -88,6 +109,9 @@
          tout(()=>{
              st($('refresh'), 'd:block')
          },1000)
+		 
+		 this.pause('background')
+		 this.music('losing')
          
          this.spinner.mspeed = 0.2
          this.spinner.speed  = 0.2

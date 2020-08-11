@@ -8,18 +8,31 @@
     background-color: rgba(0,0,0,.31);
     border:3px solid grey;
   }
+
+  @keyframes _animborder{
+    25% {border-color:white}
+    50% {border-color:red}
+    75% {border-color:white}
+    100% {border-color:red}
+  }
+
+  .animborder{
+    animation:_animborder .6s 1;
+  }  
   
   #circle, .circle{
     margin:auto;
     border: 10px solid red;
+    width:200px;
+    height:200px;
     border-radius: 50%;
     box-shadow: 3px 3px 2em lightblue,3px 3px 2em lightblue;
     
   }
   .cap{
     position:absolute;
-    width:30px;
-    height:13px;
+    width:20px;
+    height:11px;
     background-color: white;
     margin-left:calc(50% - 10px);
     top: 0px;
@@ -28,7 +41,7 @@
   #spinner, .spinner {
     position:absolute;
     top:50px;
-    left: calc(50% - 125px);
+    left: calc(50% - 100px);
     border: none;
     outline:  0;
   }
@@ -87,7 +100,7 @@
     100% {opacity: 1}
   }
   
-  #refresh {
+  #refresh, #start {
     animation: bluur 2s infinite;
     position: absolute;
     top:100px;
@@ -100,6 +113,12 @@
     cursor:pointer;
     display: none;
   }
+
+  #start {
+    left: calc(50% - 130px);
+    display:block;
+  }
+
   #parent {
     transition: all .4s ease-out;
   }
@@ -161,6 +180,8 @@
     font-family: sans-serif;
     margin-top:20px;
     font-weight: bolder;
+    color: orange;
+    text-shadow: 1px 1px 2px red
   }
   
   @keyframes rtate{

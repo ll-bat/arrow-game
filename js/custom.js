@@ -59,3 +59,19 @@
      
       }
  }
+ 
+  let tout = (fn,t) => {
+     setTimeout(fn,t) 
+  }
+  
+  let rand = (b) => {
+     return Math.floor(Math.random()*b)
+  }
+ 
+  let tgclass = (o,cl,t) => {
+	 let cls = o.className
+	 o.className += ' ' + cl
+	 tout(()=>{
+		 o.className = cls
+	 },t)
+  }

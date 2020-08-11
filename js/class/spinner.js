@@ -2,7 +2,8 @@ class Spinner {
       constructor(game){
 	   this.game = game
        this.mspeed   = 2
-       this.bt       = dist
+       this.bt       = dist 
+	   this.setWidth(width) 
        
        this.dec('used links rt',"array")
        this.dec('speed n c q',0)
@@ -32,10 +33,7 @@ class Spinner {
      }
     
 	 
-	 play(){
-        let r = $('spinner')
-        let k = 0.02
-        
+	 play(){            
         $('arrows').innerHTML = ""
         
         for(let i=0; i<=361; i++){
@@ -43,9 +41,11 @@ class Spinner {
            this.links.push(-1)
         }
        
-	    this.setWidth(width)  
-        
-        let self = this
+        this.update()        
+     }
+	 
+	 update(){
+		let r = $('spinner'), k = 0.02, self = this
         
         function update(){
           if ((k >0 && self.speed < self.mspeed) || (k<0 && self.speed > self.mspeed))
@@ -56,14 +56,14 @@ class Spinner {
           requestAnimationFrame(update)
         }
         
-          setInterval(()=>{
+        setInterval(()=>{
               if (this.game.finished) return
               self.mspeed = Math.floor(Math.random()*5) + 1
               k = (self.mspeed - self.speed) / 300
-          },10000)  
+        },10000)  
           
-          requestAnimationFrame(update)
-     }
+        requestAnimationFrame(update)	 
+	 }
 	 
 	 setWidth(w){ 
 	    width = w

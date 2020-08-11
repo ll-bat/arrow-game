@@ -28,15 +28,37 @@
   <div id ="arrow">
      
   </div>
- 
+  
+  <audio id="throwing">
+    <source src="music/throwing.mp3" type="audio/mp3">
+  </audio>
+  
+  <audio id="background" loop>
+    <source src="music/background.ogg" type="audio/ogg">
+  </audio>
+  
+  <audio id="losing">
+    <source src="music/losing.mp3" type="audio/mp3">
+  </audio>
+  
 </div>
+
  <div id="refresh" onclick="refresh(event,this)">
     Tap to refresh
+ </div>
+ 
+ <div id="start" onclick="start(this)">
+    Start
  </div>
  
  <script type='application/javascript' src='js/class/spinner.js'></script>
  <script type='application/javascript' src='js/class/arrow.js'></script>
  <script type='application/javascript' src='js/class/game.js'></script>
  <script type='application/javascript' src='js/main.js'></script>
+ <script>
+    window.onload = (ev) => {
+	   st($('parent'), 'o:.1')
+	}
+ </script>
 </body>
 </html>
